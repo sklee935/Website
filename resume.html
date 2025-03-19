@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume - Sungkeun Lee</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header with navigation -->
+  <!-- Header with Navigation -->
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="resume.html" class="nav-link active">Resume</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="hero">
@@ -23,48 +23,41 @@
     </div>
   </header>
 
-  <!-- Main content with resume details -->
+  <!-- Main Content -->
   <main>
     <section id="profile">
       <h2>Profile</h2>
       <p><strong>Sungkeun Lee (He/Him)</strong></p>
-      <p>
-        Tax Analyst | Tax Technology | Data Analyst | Machine Learning | AI | Python | MS CS @Georgia Tech
-      </p>
-      <p>
-        Specialty Building Products | Georgia Institute of Technology | Suwanee, GA, United States
-      </p>
+      <p>Tax Analyst | Tax Technology | Data Scientist | Machine Learning Enthusiast</p>
+      <p>MS CS @Georgia Tech</p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
-      <article>
+      <article class="experience-item">
         <h3>Senior Tax Analyst - Specialty Building Products</h3>
         <p>Jun 2023 - Present | Duluth, GA (Hybrid)</p>
         <ul>
-          <li>Utilized Alteryx and One Source to automate data consolidation.</li>
+          <li>Automated data consolidation using Alteryx and One Source.</li>
           <li>Prepared U.S. quarterly and year-end tax provisions.</li>
-          <li>Developed Python-based automation tools to enhance efficiency.</li>
+          <li>Developed Python-based automation tools to enhance workflow efficiency.</li>
         </ul>
       </article>
-      <!-- Add more experience articles as needed -->
+      <!-- Additional experience items can be added here -->
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <article>
+      <article class="education-item">
         <h3>Georgia Institute of Technology</h3>
         <p>Master of Science in Computer Science (May 2023 - Dec 2025)</p>
         <p>Specialization: Machine Learning</p>
       </article>
-      <article>
+      <article class="education-item">
         <h3>Georgia Institute of Technology</h3>
         <p>Bachelor of Business Administration in Accounting (Jan 2015 - May 2016)</p>
       </article>
     </section>
-
-    <!-- Additional sections for certifications, skills, etc. can be added here -->
-
   </main>
 
   <!-- Footer -->
