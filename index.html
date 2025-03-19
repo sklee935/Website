@@ -3,48 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Home - Sungkeun Lee</title>
-  <!-- Google Font for modern typography -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
-  <!-- Link to the external CSS file -->
+  <title>Portfolio - Sungkeun Lee</title>
+  <!-- Google Fonts for futuristic typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Link to common stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header with navigation and hero section -->
+  <!-- Header with Navigation and Hero Section -->
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="resume.html" class="nav-link">Resume</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="hero">
       <h1>Sungkeun Lee</h1>
-      <p>
-        Tax Analyst | Tax Technology | Data Analyst | Machine Learning | AI | Python | MS CS @Georgia Tech
-      </p>
+      <p>Tax Analyst | Tax Technology | Data Scientist | Machine Learning Enthusiast</p>
+      <p>MS CS @Georgia Tech</p>
     </div>
   </header>
 
-  <!-- Main content -->
+  <!-- Main Content -->
   <main>
     <section id="about">
       <h2>About Me</h2>
       <p>
-        Hello, I'm Sungkeun Lee. I specialize in tax analysis, data analytics, and innovative tech solutions for the tax industry. Currently working at Specialty Building Products and pursuing my Master's in Computer Science at Georgia Tech.
+        Hello, I'm Sungkeun Lee. I specialize in data science and machine learning,
+        leveraging cutting-edge technology to solve complex problems in tax analysis and beyond.
       </p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:sklee935@gmail.com">sklee935@gmail.com</a>
-      </p>
-      <p>
-        GitHub: <a href="https://github.com/sklee935" target="_blank">github.com/sklee935</a>
-      </p>
+      <p>Email: <a href="mailto:sklee935@gmail.com">sklee935@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sklee935" target="_blank">github.com/sklee935</a></p>
     </section>
   </main>
 
@@ -52,5 +48,13 @@
   <footer>
     <p>&copy; 2025 Sungkeun Lee. All rights reserved.</p>
   </footer>
+
+  <!-- GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    // Animate hero section on page load
+    gsap.from(".hero h1", { duration: 1.5, opacity: 0, y: -50, ease: "power2.out" });
+    gsap.from(".hero p", { duration: 1.5, opacity: 0, y: 50, ease: "power2.out", delay: 0.5, stagger: 0.2 });
+  </script>
 </body>
 </html>
