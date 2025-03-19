@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Sungkeun Lee</title>
-  <!-- Google Fonts for futuristic typography -->
+  <!-- Import futuristic fonts from Google -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <!-- Link to common stylesheet -->
+  <!-- Link to common CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header with Navigation and Hero Section -->
+  <!-- Header with navigation and hero section -->
   <header>
     <nav>
       <ul>
@@ -22,18 +22,18 @@
     </nav>
     <div class="hero">
       <h1>Sungkeun Lee</h1>
-      <p>Tax Analyst | Tax Technology | Data Scientist | Machine Learning Enthusiast</p>
-      <p>MS CS @Georgia Tech</p>
+      <p>Tax Analyst | Tax Technology | Data Analyst | Machine Learning | AI | Python | MS CS @Georgia Tech</p>
+      <p>Specialty Building Products | Georgia Institute of Technology | Suwanee, GA, United States</p>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main content -->
   <main>
     <section id="about">
       <h2>About Me</h2>
       <p>
-        Hello, I'm Sungkeun Lee. I specialize in data science and machine learning,
-        leveraging cutting-edge technology to solve complex problems in tax analysis and beyond.
+        Hello, I'm Sungkeun Lee. I specialize in leveraging cutting-edge technology to enhance tax analysis,
+        data science, and machine learning solutions. Explore my resume and projects to learn more.
       </p>
     </section>
 
@@ -49,10 +49,10 @@
     <p>&copy; 2025 Sungkeun Lee. All rights reserved.</p>
   </footer>
 
-  <!-- GSAP for smooth animations -->
+  <!-- GSAP Animation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    // Animate hero section on page load
+    // Simple animation for hero section
     gsap.from(".hero h1", { duration: 1.5, opacity: 0, y: -50, ease: "power2.out" });
     gsap.from(".hero p", { duration: 1.5, opacity: 0, y: 50, ease: "power2.out", delay: 0.5, stagger: 0.2 });
   </script>
