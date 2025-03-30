@@ -1,51 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Sungkeun Lee</title>
-  <!-- Import futuristic fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <!-- Link to common CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sungkeun Lee - Projects</title>
+  <!-- 1. Google Fonts: 부드러운 인상의 폰트 로드 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Merriweather or Quicksand 폰트도 필요에 따라 로드 가능 -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /> -->
+  <style>
+    /* 2. CSS: 폰트 및 컬러 팔레트 적용 */
+    :root {
+      --color-bg: #F5F5DC;        /* 베이지 배경색 */
+      --color-text: #2B3A42;     /* 딥네이비 계열 본문 텍스트 */
+      --color-accent: #A67B5B;   /* 따뜻한 브라운 톤 강조색 */
+      --color-nav: #2B3A42;      /* 네비게이션 배경 (딥 네이비) */
+      --color-nav-text: #FDF7F2; /* 네비게이션 텍스트 (밝은 베이지) */
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: 0;
+    }
+    /* 네비게이션 스타일 */
+    nav {
+      background-color: var(--color-nav);
+      padding: 1rem;
+    }
+    nav a {
+      color: var(--color-nav-text);
+      text-decoration: none;
+      margin-right: 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;  /* 호버 시 부드럽게 색 변경 */
+    }
+    nav a:hover {
+      color: var(--color-accent);
+    }
+    /* 메인 제목 스타일 */
+    main h1 {
+      font-size: 2em;
+      font-weight: 700;
+      margin: 1.5rem 1rem 0.5rem;
+    }
+    main p.intro {
+      margin: 0 1rem 2rem;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #333;
+    }
+    /* 3. 타임라인 스타일 구성 */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      /* 세로 라인 */
+      border-left: 2px solid var(--color-accent);
+    }
+    .timeline-item {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 1.5rem;
+    }
+    /* 타임라인 점 표시 */
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;               /* 선 중앙에 점이 오도록 위치 */
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      background-color: var(--color-accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--color-bg); /* 배경과 어울리게 테두리 */
+    }
+    .timeline-item span {
+      font-weight: bold;
+      color: var(--color-accent);
+    }
+    .timeline-item h3 {
+      font-size: 1.1em;
+      margin: 0.3rem 0 0.2rem;
+      font-weight: 700;
+      /* Merriweather 등의 서체를 제목에 사용할 경우 폰트 패밀리 지정 */
+      /* font-family: 'Merriweather', serif; */
+    }
+    .timeline-item p {
+      margin: 0;
+      line-height: 1.6;
+    }
+    /* 4. 버튼 스타일 (예시) */
+    .btn {
+      background-color: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #8B5E34; /* 강조색보다 약간 어두운 색으로 */
+    }
+  </style>
 </head>
 <body>
-  <!-- Header with navigation -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="resume.html" class="nav-link">Resume</a></li>
-        <li><a href="projects.html" class="nav-link active">Projects</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <h1>Projects</h1>
-    </div>
-  </header>
+  <!-- 5. 내비게이션 바 -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html" style="font-weight:bold; text-decoration:underline;">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <!-- Main content with project details -->
+  <!-- 6. 메인 콘텐츠: 프로젝트 타임라인 -->
   <main>
-    <section class="project">
-      <h2>Project 1: Automation Tool</h2>
-      <p>
-        Developed a Python-based automation tool that consolidates financial reports across subsidiaries,
-        reducing manual data entry and improving report generation efficiency.
-      </p>
-    </section>
-    <section class="project">
-      <h2>Project 2: Data Visualization Dashboard</h2>
-      <p>
-        Created an interactive dashboard using Chart.js to visualize key metrics and model performance in real-time.
-      </p>
-    </section>
-    <!-- Additional project sections can be added here -->
+    <h1>Projects & Experience</h1>
+    <p class="intro">아래 타임라인에는 Sungkeun Lee의 학업, 활동, 경력 및 프로젝트들이 연대순으로 정리되어 있습니다. 각 항목을 통해 경험 속 이야기를 확인하세요.</p>
+    <div class="timeline">
+      <!-- 2024 - 현재: 직무 경력 예시 -->
+      <div class="timeline-item">
+        <span>2024&nbsp;– 현재</span>
+        <h3>ABC Tech – 프론트엔드 소프트웨어 엔지니어</h3>
+        <p>최신 웹 기술을 활용해 **사용자 친화적인 인터페이스**를 구축하고 있습니다. 고객 피드백을 바탕으로 UI/UX를 지속 개선하여, 더 따뜻하고 직관적인 사용자 경험을 만드는 데 주력하고 있습니다.</p>
+      </div>
+      <!-- 2022 - 2024: 학업 경력 예시 -->
+      <div class="timeline-item">
+        <span>2022&nbsp;– 2024</span>
+        <h3>XYZ University – 컴퓨터공학 석사과정</h3>
+        <p>인공지능 분야를 전공하며 사람들의 삶을 바꾸는 기술을 탐구했습니다. 다양한 연구 프로젝트를 수행하면서 **머신러닝 알고리즘**의 가능성을 시험해 보았고, 문제를 새로운 시각에서 바라보는 법을 터득한 소중한 시간이었습니다.</p>
+      </div>
+      <!-- 2021: 인턴십 경험 예시 -->
+      <div class="timeline-item">
+        <span>2021</span>
+        <h3>Acme Corp – 소프트웨어 개발 인턴</h3>
+        <p>처음 현업 개발팀에 참여하여 **애자일 소프트웨어 개발** 프로세스를 익혔습니다. 멘토 개발자들과 협업하며 단순한 코딩 이상으로 **팀워크의 가치**를 배웠고, 작은 기능을 구현할 때도 사용자 관점을 고려하는 습관을 길렀습니다.</p>
+      </div>
+      <!-- 2020: 개인 프로젝트 경험 예시 -->
+      <div class="timeline-item">
+        <span>2020</span>
+        <h3>개인 프로젝트 – 감정 분석 웹 애플리케이션</h3>
+        <p>텍스트 데이터로 **감정을 분석**하는 웹 앱을 자체 개발했습니다. 처음 접하는 NLP 알고리즘 구현에 어려움도 있었지만, 끝까지 완성하여 서비스를 공개했고 사용자들에게 도움이 될 수 있다는 **뿌듯함**을 얻었습니다.</p>
+      </div>
+      <!-- 2019: 교육 수료 경험 예시 -->
+      <div class="timeline-item">
+        <span>2019</span>
+        <h3>FastCampus 부트캠프 수료 – "딥러닝 프로젝트 캠프"</h3>
+        <p>실무 중심의 딥러닝 부트캠프에 참여하여 **머신러닝**에 입문했습니다. 낯선 개념들을 하나씩 습득하며 밤낮없이 실습에 몰두했고, 이 경험을 통해 새로운 커리어에 대한 **열정과 방향성**을 얻었습니다.</p>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sungkeun Lee. All rights reserved.</p>
-  </footer>
+  <!-- 7. 예시용 버튼 -->
+  <div style="text-align:center; padding:2rem;">
+    <button class="btn">Contact Me</button>
+  </div>
+
+  <!-- 8. GSAP 애니메이션 스크립트: 타임라인 항목 부드럽게 등장 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    // 타임라인 아이템들을 순차적으로 부드럽게 페이드인
+    gsap.from(".timeline-item", {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power1.out",
+      stagger: 0.2    // 항목별 0.2초 간격 지연 등장
+    });
+  </script>
 </body>
 </html>
