@@ -1,129 +1,267 @@
-/* Reset and Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ---------------------------------
+   styles.css
+   공통 스타일 시트
+------------------------------------*/
+
+/* Google Fonts는 HTML에서 <link> 태그로 불러옵니다. CSS에서는 폰트 패밀리만 지정 */
+:root {
+  /* ------ 컬러 팔레트 ------ */
+  --color-bg: #f9f5ef;       /* 메인 배경 (밝은 베이지) */
+  --color-text: #2b2a26;     /* 본문 텍스트 (딥 네이비 대신 딥 브라운/네이비 혼합 톤 예시) */
+  --color-accent: #c38154;   /* 포인트 (부드러운 오렌지/브라운) */
+  --color-nav: #2b2a26;      /* 헤더/네비 배경 (딥 브라운/네이비 혼합) */
+  --color-nav-text: #fdfcf8; /* 네비 텍스트 (아주 밝은 베이지/아이보리) */
+
+  /* 폰트 사이즈 기본값 */
+  --base-font-size: 16px;
+  /* 폰트 패밀리 */
+  --font-primary: 'Noto Sans KR', sans-serif;
+  --font-heading: 'Quicksand', 'Noto Sans KR', sans-serif;
+  --font-accent: 'Merriweather', serif;
+
+  /* 간격/레이아웃 */
+  --max-width: 1100px;
+}
+
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
   line-height: 1.6;
 }
 
-/* Navigation Styles */
-header {
-  background: #1f1f1f;
-  padding: 20px 0;
+/* 공통 레이아웃: 중앙정렬 컨테이너 */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-nav ul {
+/* ------------------ NAVIGATION ------------------ */
+header {
+  background-color: var(--color-nav);
+}
+
+header nav ul {
   list-style: none;
   display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
 }
 
-nav ul li a {
+header nav a {
+  color: var(--color-nav-text);
   text-decoration: none;
-  color: #e0e0e0;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  color: #00e5ff;
+header nav a:hover {
+  color: var(--color-accent);
 }
 
-/* Hero Section */
+.nav-link.active {
+  text-decoration: underline;
+}
+
+/* ------------------ HERO ------------------ */
 .hero {
   text-align: center;
-  margin: 40px 0;
+  padding: 3rem 1rem 2rem;
+  /* hero 배경색 or 이미지 필요 시 */
 }
 
 .hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 3.5rem;
-  color: #00e5ff;
-  margin-bottom: 10px;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #bdbdbd;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
 }
 
-/* Main Content */
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+/* ------------------ MAIN SECTIONS ------------------ */
+main h2 {
+  font-family: var(--font-heading);
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
 }
 
-/* Section Styling */
+main p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
 section {
-  background: #1e1e1e;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
 }
 
-section h2 {
-  color: #00e5ff;
-  margin-bottom: 10px;
-  font-size: 2rem;
-  border-bottom: 2px solid #00e5ff;
-  display: inline-block;
-  padding-bottom: 5px;
+/* ------------------ TIMELINE ------------------ */
+.timeline {
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: var(--max-width);
 }
 
-section p {
-  margin-bottom: 10px;
+/* 수직 라인 (중앙) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: rgba(195, 129, 84, 0.3); /* 포인트 색의 투명도 */
 }
 
-/* Resume - Article Styles */
-.experience-item, .education-item {
-  margin-bottom: 20px;
-}
-
-.experience-item h3, .education-item h3 {
-  font-size: 1.5rem;
-  color: #00e5ff;
-  margin-bottom: 5px;
-}
-
-.experience-item ul {
-  margin-left: 20px;
-}
-
-.experience-item li {
-  margin-bottom: 5px;
-}
-
-/* Project Section */
-.project {
-  margin-bottom: 20px;
-}
-
-/* Footer Styles */
-footer {
+/* 연도 라벨 */
+.timeline-year {
   text-align: center;
-  padding: 20px;
-  background: #1f1f1f;
-  color: #757575;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  margin: 2rem 0 1rem;
+  font-family: var(--font-accent);
+}
+
+/* timeline-item: 좌우 배치 */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* 왼쪽, 오른쪽 구분 */
+.timeline-item-left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item-right {
+  left: 50%;
+  text-align: left;
+}
+
+/* 점(아이콘) 표시 */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  width: 15px;
+  height: 15px;
+  background: var(--color-accent);
+  border: 3px solid var(--color-bg);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* 왼쪽 점 위치 */
+.timeline-item-left::before {
+  right: -8px;
+}
+
+/* 오른쪽 점 위치 */
+.timeline-item-right::before {
+  left: -8px;
+}
+
+/* 타임라인 카드 컨테이너 */
+.timeline-content {
+  display: inline-block;
+  background-color: #fffdf8; /* 밝은 배경 카드 */
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.05);
+  max-width: 90%;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.timeline-content .date-range {
+  display: block;
+  font-size: 0.9rem;
+  color: #8c857b;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content ul {
+  padding-left: 1.2rem; /* 리스트 들여쓰기 */
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content li {
+  margin-bottom: 0.3rem;
+}
+
+/* 반응형(모바일)에서 한 열로 정렬 */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 20px; /* 중앙선 대신 왼쪽 배치 */
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 4rem;
+    text-align: left !important;
+  }
+  .timeline-item::before {
+    left: 0;
+    right: auto;
+  }
+  .timeline-item-left, .timeline-item-right {
+    left: 0;
+  }
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+  background-color: var(--color-nav);
+  text-align: center;
+  color: var(--color-nav-text);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+footer p {
+  margin: 0;
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
+/* ------------------ BUTTONS & LINKS ------------------ */
+.btn, button {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover, button:hover {
+  background-color: #9d6436; /* 포인트 색보다 살짝 어두운 톤 */
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
