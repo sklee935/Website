@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume - Sungkeun Lee</title>
-  <!-- Import futuristic fonts from Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Quicksand:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <!-- Link to common CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -20,13 +20,15 @@
         <li><a href="index.html#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero">
-      <h1>Resume</h1>
-    </div>
   </header>
 
+  <!-- Hero / Title -->
+  <div class="hero container">
+    <h1>Resume</h1>
+  </div>
+
   <!-- Main content with detailed resume information -->
-  <main>
+  <main class="container">
     <!-- Profile Section -->
     <section id="profile">
       <h2>Profile</h2>
@@ -34,7 +36,7 @@
       <p>Tax Analyst | Tax Technology | Data Analyst | Machine Learning | AI | Python | MS CS @Georgia Tech</p>
       <p>Specialty Building Products | Georgia Institute of Technology | Suwanee, GA, United States</p>
       <p>266 followers | 253 connections</p>
-      <p><em>Open to: Data Analyst, Machine Learning Specialist, Data Scientist, Tax Accountant, and Tax Technician roles</em></p>
+      <p><em>Open to: Data Analyst, Machine Learning Specialist, Data Scientist, Tax Accountant, Tax Technician roles</em></p>
     </section>
 
     <!-- Summary Section -->
@@ -73,9 +75,9 @@
         <h3>Senior Tax Analyst - Specialty Building Products</h3>
         <p>Jun 2023 - Present | Duluth, GA (Hybrid)</p>
         <ul>
-          <li>Utilized Alteryx and One Source for automating data consolidation and enhancing workflow efficiency and data accuracy.</li>
+          <li>Utilized Alteryx and OneSource for automating data consolidation and enhancing workflow efficiency.</li>
           <li>Prepares U.S. quarterly and year-end tax provisions and journal entries.</li>
-          <li>Developed a Python-based automation tool for consolidating financial reports, reducing manual data entry.</li>
+          <li>Developed a Python-based automation tool for consolidating financial reports, significantly reducing manual data entry.</li>
           <li>Implemented data transformation scripts to standardize and reconcile financial statements.</li>
           <li>Managed migration of ledger data from legacy systems to a new consolidated format.</li>
           <li>Coordinated with external service providers for federal and state tax returns.</li>
@@ -90,7 +92,7 @@
           <li>Networking Projects: Implemented routing algorithms, SDN project, firewall and load balancer projects.</li>
           <li>Developed technical indicators for stock trading and applied reinforcement learning for trading.</li>
           <li>Designed trading simulations considering transaction costs and market impact.</li>
-          <li>Visualized data using Python libraries such as Matplotlib.</li>
+          <li>Visualized data using Python libraries (Matplotlib, etc.).</li>
         </ul>
       </article>
 
@@ -100,9 +102,9 @@
         <p>Dec 2023 - Mar 2024 | Remote</p>
         <ul>
           <li>Led development of Python scripts using yt-dlp for efficient downloading of YouTube videos.</li>
-          <li>Integrated YouTube API and transitioned database management from MySQL to PostgreSQL.</li>
+          <li>Integrated YouTube API and transitioned DB management from MySQL to PostgreSQL.</li>
           <li>Applied NLP techniques for transcript summarization using Transformers library.</li>
-          <li>Enhanced project efficiency with optimized software components.</li>
+          <li>Enhanced project efficiency by optimizing software components.</li>
         </ul>
       </article>
 
@@ -112,8 +114,8 @@
         <p>Feb 2020 - Dec 2022 (Multiple Roles) | Atlanta, GA</p>
         <ul>
           <li>Analyzed tax accounts and prepared U.S. GAAP tax provisions.</li>
-          <li>Managed fixed assets and coordinated with external audit activities.</li>
-          <li>Assisted with federal and state tax filings and maintained tax filing calendars.</li>
+          <li>Managed fixed assets, coordinated with external audits, and assisted with federal/state tax filings.</li>
+          <li>Maintained tax filing calendars and collaborated with cross-functional teams for compliance.</li>
         </ul>
       </article>
 
@@ -123,7 +125,7 @@
         <p>Jun 2016 - Jul 2019 | Atlanta, GA and Duluth, GA</p>
         <ul>
           <li>Managed receivables, conducted inventory counts, and coordinated logistics operations.</li>
-          <li>Implemented process improvements that enhanced accuracy and efficiency.</li>
+          <li>Implemented process improvements for accuracy and efficiency.</li>
         </ul>
       </article>
     </section>
@@ -151,7 +153,7 @@
         <p>HackerRank - Issued Mar 2025</p>
         <p>Credential ID: 2EFAOE8D9893</p>
       </article>
-      <!-- Additional certifications can be added here following the same format -->
+      <!-- Additional certifications... -->
     </section>
   </main>
 
@@ -159,5 +161,26 @@
   <footer>
     <p>&copy; 2025 Sungkeun Lee. All rights reserved.</p>
   </footer>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    // resume.html 애니메이션
+    gsap.from(".hero h1", {
+      duration: 1.0,
+      opacity: 0,
+      y: 20,
+      ease: "power1.out"
+    });
+
+    gsap.from("main section", {
+      duration: 0.8,
+      opacity: 0,
+      y: 30,
+      ease: "power1.out",
+      stagger: 0.2,
+      delay: 0.5
+    });
+  </script>
 </body>
 </html>
