@@ -1,174 +1,167 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sungkeun Lee - Projects</title>
-  <!-- 1. Google Fonts: 부드러운 인상의 폰트 로드 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Merriweather or Quicksand 폰트도 필요에 따라 로드 가능 -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" /> -->
-  <style>
-    /* 2. CSS: 폰트 및 컬러 팔레트 적용 */
-    :root {
-      --color-bg: #F5F5DC;        /* 베이지 배경색 */
-      --color-text: #2B3A42;     /* 딥네이비 계열 본문 텍스트 */
-      --color-accent: #A67B5B;   /* 따뜻한 브라운 톤 강조색 */
-      --color-nav: #2B3A42;      /* 네비게이션 배경 (딥 네이비) */
-      --color-nav-text: #FDF7F2; /* 네비게이션 텍스트 (밝은 베이지) */
-    }
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      margin: 0;
-      padding: 0;
-    }
-    /* 네비게이션 스타일 */
-    nav {
-      background-color: var(--color-nav);
-      padding: 1rem;
-    }
-    nav a {
-      color: var(--color-nav-text);
-      text-decoration: none;
-      margin-right: 1rem;
-      font-weight: 600;
-      transition: color 0.3s ease;  /* 호버 시 부드럽게 색 변경 */
-    }
-    nav a:hover {
-      color: var(--color-accent);
-    }
-    /* 메인 제목 스타일 */
-    main h1 {
-      font-size: 2em;
-      font-weight: 700;
-      margin: 1.5rem 1rem 0.5rem;
-    }
-    main p.intro {
-      margin: 0 1rem 2rem;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #333;
-    }
-    /* 3. 타임라인 스타일 구성 */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      /* 세로 라인 */
-      border-left: 2px solid var(--color-accent);
-    }
-    .timeline-item {
-      position: relative;
-      margin: 2rem 0;
-      padding-left: 1.5rem;
-    }
-    /* 타임라인 점 표시 */
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -7px;               /* 선 중앙에 점이 오도록 위치 */
-      top: 0.5rem;
-      width: 12px;
-      height: 12px;
-      background-color: var(--color-accent);
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px var(--color-bg); /* 배경과 어울리게 테두리 */
-    }
-    .timeline-item span {
-      font-weight: bold;
-      color: var(--color-accent);
-    }
-    .timeline-item h3 {
-      font-size: 1.1em;
-      margin: 0.3rem 0 0.2rem;
-      font-weight: 700;
-      /* Merriweather 등의 서체를 제목에 사용할 경우 폰트 패밀리 지정 */
-      /* font-family: 'Merriweather', serif; */
-    }
-    .timeline-item p {
-      margin: 0;
-      line-height: 1.6;
-    }
-    /* 4. 버튼 스타일 (예시) */
-    .btn {
-      background-color: var(--color-accent);
-      color: #fff;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      font-size: 1em;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #8B5E34; /* 강조색보다 약간 어두운 색으로 */
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Experience - Sungkeun Lee</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Quicksand:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link to common CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- 5. 내비게이션 바 -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html" style="font-weight:bold; text-decoration:underline;">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Header with navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="resume.html" class="nav-link">Resume</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- 6. 메인 콘텐츠: 프로젝트 타임라인 -->
+  <div class="hero container">
+    <h1>Projects & Career Timeline</h1>
+    <p>Explore my complete journey, from tax analytics to machine learning, including FastCampus projects and MLOps studies.</p>
+  </div>
+
+  <!-- Main timeline content -->
   <main>
-    <h1>Projects & Experience</h1>
-    <p class="intro">아래 타임라인에는 Sungkeun Lee의 학업, 활동, 경력 및 프로젝트들이 연대순으로 정리되어 있습니다. 각 항목을 통해 경험 속 이야기를 확인하세요.</p>
     <div class="timeline">
-      <!-- 2024 - 현재: 직무 경력 예시 -->
-      <div class="timeline-item">
-        <span>2024&nbsp;– 현재</span>
-        <h3>ABC Tech – 프론트엔드 소프트웨어 엔지니어</h3>
-        <p>최신 웹 기술을 활용해 **사용자 친화적인 인터페이스**를 구축하고 있습니다. 고객 피드백을 바탕으로 UI/UX를 지속 개선하여, 더 따뜻하고 직관적인 사용자 경험을 만드는 데 주력하고 있습니다.</p>
+
+      <!-- ===== YEAR 2023 ===== -->
+      <div class="timeline-year">2023 - Present</div>
+
+      <!-- Senior Tax Analyst (Example) -->
+      <div class="timeline-item timeline-item-left">
+        <div class="timeline-content">
+          <h3>Senior Tax Analyst - Specialty Building Products</h3>
+          <span class="date-range">Jun 2023 – Present</span>
+          <ul>
+            <li>Designed and implemented Python scripts to transform complex Excel reports into unified tables, extracting key asset details using regular expressions.</li>
+            <li>Utilized Alteryx and OneSource for automating data consolidation, enhancing workflow efficiency and data accuracy.</li>
+            <li>Prepared U.S. quarterly and year-end tax provision calculations and journal entries.</li>
+            <li>Conducted extensive research on federal and state tax regulations using Bloomberg Tax and Generative AI.</li>
+            <li>Coordinated with external providers for US federal and state returns; managed tax filing calendars.</li>
+            <li>Researched and responded to tax notices and audit requests.</li>
+          </ul>
+        </div>
       </div>
-      <!-- 2022 - 2024: 학업 경력 예시 -->
-      <div class="timeline-item">
-        <span>2022&nbsp;– 2024</span>
-        <h3>XYZ University – 컴퓨터공학 석사과정</h3>
-        <p>인공지능 분야를 전공하며 사람들의 삶을 바꾸는 기술을 탐구했습니다. 다양한 연구 프로젝트를 수행하면서 **머신러닝 알고리즘**의 가능성을 시험해 보았고, 문제를 새로운 시각에서 바라보는 법을 터득한 소중한 시간이었습니다.</p>
+
+      <!-- Computer Science Master's Student -->
+      <div class="timeline-item timeline-item-right">
+        <div class="timeline-content">
+          <h3>Computer Science Master's Student - Georgia Institute of Technology</h3>
+          <span class="date-range">May 2023 – Present</span>
+          <p>Pursuing advanced studies in Machine Learning. Engaged in networking projects (distance vector & link state routing, SDN firewall) and reinforcement learning for trading simulations.</p>
+          <p>Key Achievements:</p>
+          <ul>
+            <li>Developed Q-learning trading agents with dynamic initialization, optimizing policy strategies.</li>
+            <li>Employed Python libraries (Matplotlib, NumPy) for data visualization and analysis.</li>
+          </ul>
+        </div>
       </div>
-      <!-- 2021: 인턴십 경험 예시 -->
-      <div class="timeline-item">
-        <span>2021</span>
-        <h3>Acme Corp – 소프트웨어 개발 인턴</h3>
-        <p>처음 현업 개발팀에 참여하여 **애자일 소프트웨어 개발** 프로세스를 익혔습니다. 멘토 개발자들과 협업하며 단순한 코딩 이상으로 **팀워크의 가치**를 배웠고, 작은 기능을 구현할 때도 사용자 관점을 고려하는 습관을 길렀습니다.</p>
+
+      <!-- FastCampus 50 Projects -->
+      <div class="timeline-item timeline-item-left">
+        <div class="timeline-content">
+          <h3>FastCampus "50 Projects to Master Machine Learning"</h3>
+          <span class="date-range">2023</span>
+          <p>
+            Completed an intensive set of 50 practical ML projects, covering data exploration, feature engineering, modeling, and deployment across various domains (finance, healthcare, energy, e-commerce, etc.).
+          </p>
+          <p>Selected Notable Projects:</p>
+          <ul>
+            <li><strong>Clothing Sales Prediction</strong>: Built regression models with thorough EDA; improved accuracy by 20% over baseline.</li>
+            <li><strong>Hospital Revisit Customer Analysis</strong>: Applied classification algorithms and error analysis in multiple stages.</li>
+            <li><strong>Air Quality Data Analysis</strong>: Conducted feature engineering and time-series forecasting for pollution levels.</li>
+            <li><strong>Breast Cancer Classification</strong>: Utilized logistic regression, SVM, and ensemble methods to achieve high precision.</li>
+            <li><em>...and many more covering credit card fraud detection, traffic analysis, real estate price prediction, IoT hack detection, etc.</em></li>
+          </ul>
+        </div>
       </div>
-      <!-- 2020: 개인 프로젝트 경험 예시 -->
-      <div class="timeline-item">
-        <span>2020</span>
-        <h3>개인 프로젝트 – 감정 분석 웹 애플리케이션</h3>
-        <p>텍스트 데이터로 **감정을 분석**하는 웹 앱을 자체 개발했습니다. 처음 접하는 NLP 알고리즘 구현에 어려움도 있었지만, 끝까지 완성하여 서비스를 공개했고 사용자들에게 도움이 될 수 있다는 **뿌듯함**을 얻었습니다.</p>
+
+      <!-- ===== YEAR 2023 (End) ===== -->
+
+      <!-- ===== MLOps Course ===== -->
+      <div class="timeline-item timeline-item-right">
+        <div class="timeline-content">
+          <h3>MLOps for Machine Learning Commercialization</h3>
+          <span class="date-range">2023 (6h 47m course)</span>
+          <p>Delved into the full ML lifecycle beyond model training, focusing on deployment, monitoring, and continuous improvement.</p>
+          <ul>
+            <li>MLFlow for experiment tracking and versioning.</li>
+            <li>AWS SageMaker to build end-to-end ML pipelines (training, deployment, inference).</li>
+            <li>Monitoring for data drift and performance degradation to maintain model reliability.</li>
+          </ul>
+        </div>
       </div>
-      <!-- 2019: 교육 수료 경험 예시 -->
-      <div class="timeline-item">
-        <span>2019</span>
-        <h3>FastCampus 부트캠프 수료 – "딥러닝 프로젝트 캠프"</h3>
-        <p>실무 중심의 딥러닝 부트캠프에 참여하여 **머신러닝**에 입문했습니다. 낯선 개념들을 하나씩 습득하며 밤낮없이 실습에 몰두했고, 이 경험을 통해 새로운 커리어에 대한 **열정과 방향성**을 얻었습니다.</p>
+
+      <!-- ===== YEAR 2022 ===== -->
+      <div class="timeline-year">2022</div>
+
+      <!-- LX Hausys America -->
+      <div class="timeline-item timeline-item-left">
+        <div class="timeline-content">
+          <h3>Tax Specialist / Accounting Specialist / Cash Application - LX Hausys America</h3>
+          <span class="date-range">Feb 2020 – Dec 2022</span>
+          <ul>
+            <li>Analyzed tax accounts and prepared U.S. GAAP tax provisions for multiple HQ locations (ASC 740 compliance).</li>
+            <li>Assisted with R&D tax credits, cost segregation, transfer pricing with PWC & KPMG.</li>
+            <li>Prepared and filed federal, state, and local tax returns (sales, use, property) in 45 states.</li>
+            <li>Coordinated with external auditors, maintained tax calendars, and reconciled GL entries.</li>
+          </ul>
+        </div>
       </div>
+
+      <!-- ===== YEAR 2021, 2020... (아래 예시, 필요 시 계속 추가) ===== -->
+
+      <!-- Software Engineer Intern - Vosyn -->
+      <div class="timeline-item timeline-item-right">
+        <div class="timeline-content">
+          <h3>Software Engineer Intern - Vosyn (Contract)</h3>
+          <span class="date-range">Dec 2023 – Mar 2024</span>
+          <ul>
+            <li>Developed Python scripts with yt-dlp for efficient YouTube video downloads and metadata extraction.</li>
+            <li>Integrated YouTube API; migrated DB from MySQL to PostgreSQL.</li>
+            <li>Used NLP for transcript summarization with Transformers library, enhancing content analysis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 더 추가: CJ Logistics, Army Service, Samsung Card Intern, Tutor etc. -->
+      <!-- 필요에 따라 타임라인아이템 계속 이어서 작성 -->
+
     </div>
   </main>
 
-  <!-- 7. 예시용 버튼 -->
-  <div style="text-align:center; padding:2rem;">
-    <button class="btn">Contact Me</button>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sungkeun Lee. All rights reserved.</p>
+  </footer>
 
-  <!-- 8. GSAP 애니메이션 스크립트: 타임라인 항목 부드럽게 등장 -->
+  <!-- GSAP Animation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    // 타임라인 아이템들을 순차적으로 부드럽게 페이드인
-    gsap.from(".timeline-item", {
-      opacity: 0,
-      y: 30,
+    // projects.html 타임라인 애니메이션
+    gsap.from(".hero h1, .hero p", {
       duration: 0.8,
+      opacity: 0,
+      y: 20,
       ease: "power1.out",
-      stagger: 0.2    // 항목별 0.2초 간격 지연 등장
+      stagger: 0.2
+    });
+
+    // timeline-item 부드러운 등장
+    gsap.from(".timeline-item", {
+      duration: 1.0,
+      opacity: 0,
+      y: 50,
+      ease: "power1.out",
+      stagger: 0.2,
+      delay: 0.5
     });
   </script>
 </body>
